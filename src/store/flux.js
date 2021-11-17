@@ -42,10 +42,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			filterFavorites: item => {
 				const {favorites} = getStore();
-				let filtered = favorites.filter(fav => {
-				  return item !== fav.name;
-				});
-				setStore(filtered);
+				const {filtered} = getStore();
+				filtered = favorites.filter((fav) => 
+					fav !== item
+				)
+				return filtered;
 			},
 			
 			getPlanets: () => {

@@ -19,10 +19,10 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route exact path='/people' element={<People/>}/>
-        <Route exact path='/:id' element={<PeopleDetail/>}/>
-        <Route path='/planets' element={<Planets/>} />
-        <Route exact path='/:id' element={<PlanetDetail/>}/>
+        <Route exact path='/people/' element={<People/>}/> 
+        <Route path='/people/:id' element={<PeopleDetail/>}/>
+        <Route exact path='/planets/' element={<Planets/>}/> 
+        <Route path='/planets/:id' element={<PlanetDetail/>}/>
         <Route component={NotFound}></Route>
       </Routes>
     </Fragment>

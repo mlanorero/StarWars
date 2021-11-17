@@ -1,13 +1,14 @@
 import React from "react";
-import People from "./people"
-import Planets from "./planets"
+import { Link } from "react-router-dom"
+
+import './styles.css';
+
 const Home = () => {
 
     return(
         <>
-
-        <People />
-        <Planets />
+        <Link className="home" to="/people">People</Link>
+        <Link className="home" to="/planets">Planets</Link>
         </>
     )
 }
