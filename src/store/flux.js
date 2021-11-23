@@ -5,7 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characterDetails: null,
 			planetsDetail: null,
 			favorites:[],
-			filtered:[],
 			planets: []
         },
         actions: {
@@ -42,11 +41,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			filterFavorites: item => {
 				const {favorites} = getStore();
-				const {filtered} = getStore();
-				filtered = favorites.filter((fav) => 
+				let filtered = favorites.filter((fav) => 
 					fav !== item
 				)
-				return filtered;
+				setStore({favorites: filtered});
 			},
 			
 			getPlanets: () => {
